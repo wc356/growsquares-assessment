@@ -1,0 +1,18 @@
+.header {
+    background: $dark-blue;
+}
+
+.header__content {
+    align-items: center;
+    display: flex;
+    justify-content: space-between; //distribute space between expensify and logout button
+    padding: $s-size 0;
+}
+
+.header__title {
+    color: white;
+    text-decoration: none;
+    h1 {    //targets all h1's under this name
+        margin: 0
+    }
+}
