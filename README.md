@@ -16,8 +16,7 @@ __Requirements:__
 - Briefly document your process in SOLUTION.md
 
 __Solution Demo:__
-
-![Link](https://j.gifs.com/E8LRDY.gif)
+![](https://github.com/haine1998/growsquares-assessment/blob/master/gif.gif)
 
 ### Setup
 
