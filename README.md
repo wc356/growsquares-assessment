@@ -5,7 +5,15 @@ This is a very open-ended challenge. Be creative and have fun!
 
 ### Your Task
 
-Implement Mapbox into a React app and add some interactivity. Use [this link](https://docs.mapbox.com/help/tutorials/use-mapbox-gl-js-with-react/) for more details.
+Implement Mapbox into a React app with some Redux functionality. 
+
+__Requirements:__
+- Use [this link](https://docs.mapbox.com/help/tutorials/use-mapbox-gl-js-with-react/) for initial setup details.
+- Implement using react and redux
+- Whenever you click on the map, send a click event that adds the coordinate to the redux store
+- All the previous clicked coordinates should show up next to/near the map
+- Each coordinate can be deleted
+- Briefly document your process in SOLUTION.md
 
 ### Setup
 
