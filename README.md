@@ -29,5 +29,5 @@ __Solution Demo:__
 To use this boilerplate template, clone this repository with
 ```git clone```. <br/>
 Then, install all modules by first cd-ing into
-the directory and running ```yarn install```. <br/>
+the directory and running ```yarn install``` (or ```npm install```). <br/>
 To see the boilerplate site locally, run ```yarn run dev-server``` and view on localhost:8080.
