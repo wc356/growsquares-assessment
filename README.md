@@ -15,6 +15,10 @@ __Requirements:__
 - Each coordinate can be deleted
 - Briefly document your process in SOLUTION.md
 
+__Solution Demo:__
+
+![Link](https://j.gifs.com/E8LRDY.gif)
+
 ### Setup
 
 To use this boilerplate template, clone this repository with
