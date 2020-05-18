@@ -1,14 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import {Provider} from 'react-redux';
-import AppRouter, {history} from './routers/AppRouter';
+import AppRouter from './routers/AppRouter';
 import configureStore from './store/configureStore';
-import LoadingPage from './components/LoadingPage';
 
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
-
-
 
 const store = configureStore();
 
@@ -25,7 +22,5 @@ const renderApp = () => {
         hasRendered = true;
     }
 }
-
-ReactDOM.render(<LoadingPage />, document.getElementById('app'));
 
 renderApp();

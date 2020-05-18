@@ -1,12 +1,12 @@
 .header {
-    background: $dark-blue;
+    background: black;
 }
 
 .header__content {
     align-items: center;
     display: flex;
     justify-content: space-between; //distribute space between expensify and logout button
-    padding: $s-size 0;
+    padding: 1.2rem 0;
 }
 
 .header__title {
@@ -16,3 +16,10 @@
         margin: 0
     }
 }
+
+.content-container {
+    margin: 0 auto; //evenly distribute space left and right
+    max-width: 80rem;
+    padding: 0 1.6rem;
+}
+
