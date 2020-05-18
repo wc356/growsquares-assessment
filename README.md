@@ -13,9 +13,15 @@ __Requirements:__
 - Whenever you click on the map, send a click event that adds the coordinate to the redux store
 - All the previous clicked coordinates should show up next to/near the map
 - Each coordinate can be deleted
-- Briefly document your process in SOLUTION.md
+
+__Links that may be helpful:__
+- https://docs.mapbox.com/mapbox-gl-js/example/mouse-position/
+- https://docs.mapbox.com/mapbox-gl-js/api/#map.event:click (particularly click)
+- https://github.com/mapbox/mapbox-react-examples
+- https://redux.js.org/basics/basic-tutorial
 
 __Solution Demo:__
+
 ![](https://github.com/haine1998/growsquares-assessment/blob/master/gif.gif)
 
 ### Setup
