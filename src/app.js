@@ -1,26 +1,39 @@
-import React from "react";
+import React, { useReducer } from "react";
 import ReactDOM from "react-dom";
-import {Provider} from 'react-redux';
-import AppRouter from './routers/AppRouter';
-import configureStore from './store/configureStore';
+// import {Provider} from 'react-redux';
+import AppRouter from "./routers/AppRouter";
+// import configureStore from './store/configureStore';
 
-import 'normalize.css/normalize.css';
-import './styles/styles.scss';
+import CoordinatesContext from "../src/context/coordinates-context";
+import coordinatesReducer from "./reducers/map";
 
-const store = configureStore();
+import "normalize.css/normalize.css";
+import "./styles/styles.scss";
 
-const jsx = (
-    <Provider store={store}>
-        <AppRouter />
-    </Provider>
-);
+// const store = configureStore();
 
-let hasRendered = false;
+// const jsx = (
+//     <Provider store={store}>
+//         <AppRouter />
+//     </Provider>
+// );
+
+const App = () => {
+  const [coordinates, coordinatesDispatch] = useReducer(coordinatesReducer, []);
+
+  return (
+    <CoordinatesContext.Provider value={{ coordinates, coordinatesDispatch }}>
+      <AppRouter />
+    </CoordinatesContext.Provider>
+  );
+};
+
 const renderApp = () => {
-    if (!hasRendered) {
-        ReactDOM.render(jsx, document.getElementById('app'));
-        hasRendered = true;
-    }
-}
+  let hasRendered = false;
+  if (!hasRendered) {
+    ReactDOM.render(<App />, document.getElementById("app"));
+    hasRendered = true;
+  }
+};
 
 renderApp();

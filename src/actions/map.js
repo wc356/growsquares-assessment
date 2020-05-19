@@ -1,11 +1,9 @@
-
-
-export const addCoord = (data) => ({
-    type: 'ADD',
-    data
+export const addCoord = (coord) => ({
+  type: "ADD",
+  coord,
 });
 
-export const deleteCoord = (data) => ({
-    type: 'DELETE',
-    data
+export const deleteCoord = (id) => ({
+  type: "DELETE",
+  id,
 });

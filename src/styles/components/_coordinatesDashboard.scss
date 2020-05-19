@@ -1,0 +1,35 @@
+.dashboard-container {
+  background: rgba(31, 51, 73, 0.05);
+  margin-right: 2rem;
+  padding: 2rem;
+  width: 100%;
+  border-radius: 0 1rem 1rem 0;
+}
+
+.coordinate {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  justify-content: space-around;
+  font-family: Futura, Arial, Helvetica, sans-serif;
+}
+
+.coordinate button {
+  cursor: pointer;
+  border-radius: 4px;
+  background: purple;
+  border: none;
+  width: 4rem;
+  height: 35px;
+  color: white;
+  transition: all 0.15s;
+}
+
+.coordinate button:hover {
+  transform: translateY(-3px);
+  background: orange;
+}
+
+.coordinate button:hover:active {
+  background: red;
+}
