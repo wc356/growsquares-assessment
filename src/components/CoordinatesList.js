@@ -1,14 +1,16 @@
-import React, { useContext } from "react";
+import React from "react";
+import { connect } from "react-redux";
 
-import CoordinatesContext from "../context/coordinates-context";
 import Coordinate from "./Coordinate";
 
-const CoordinatesList = () => {
-  const { coordinates } = useContext(CoordinatesContext);
-
+const CoordinatesList = ({ coordinates: { coordinates } }) => {
   return coordinates.map((coordinate) => (
     <Coordinate key={coordinate.id} coord={coordinate} />
   ));
 };
 
-export default CoordinatesList;
+const mapStateToProps = (state) => ({
+  coordinates: state,
+});
+
+export default connect(mapStateToProps)(CoordinatesList);

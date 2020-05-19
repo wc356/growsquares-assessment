@@ -1,16 +1,14 @@
-import React, { useState, useEffect, useContext } from "react";
-// import { connect } from "react-redux";
+import React, { useState, useEffect } from "react";
+import { connect } from "react-redux";
 
 import { v4 as uuidv4 } from "uuid";
 import mapboxgl from "mapbox-gl";
 
-import CoordinatesContext from "../context/coordinates-context";
 import { addCoord } from "../actions/map";
 
 import "../styles/components/_map.scss";
 
-const Map = ({ mapContainer }) => {
-  const { coordinatesDispatch } = useContext(CoordinatesContext);
+const Map = ({ mapContainer, coordinatesDispatch }) => {
   const [mapCoord] = useState({ lat: 40.7275, lng: -74 });
   const [pointerCoord, setPointerCoord] = useState({
     lat: undefined,
@@ -34,8 +32,12 @@ const Map = ({ mapContainer }) => {
     });
 
     map.on("click", (e) => {
-      const clickCoord = { id: uuidv4(), lat: e.lngLat.lat, lng: e.lngLat.lng };
-      coordinatesDispatch(addCoord(clickCoord));
+      const clickCoord = {
+        id: uuidv4(),
+        lat: e.lngLat.lat,
+        lng: e.lngLat.lng,
+      };
+      coordinatesDispatch(clickCoord);
     });
   }, []);
 
@@ -51,4 +53,8 @@ const Map = ({ mapContainer }) => {
   );
 };
 
-export default Map;
+const mapDispatchToProps = (dispatch) => ({
+  coordinatesDispatch: (coordinate) => dispatch(addCoord(coordinate)),
+});
+
+export default connect(null, mapDispatchToProps)(Map);

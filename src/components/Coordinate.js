@@ -1,11 +1,9 @@
-import React, { useContext } from "react";
+import React from "react";
+import { connect } from "react-redux";
 
-import CoordinatesContext from "../context/coordinates-context";
 import { deleteCoord } from "../actions/map";
 
-const Coordinate = ({ coord: { lng, lat, id } }) => {
-  const { coordinatesDispatch } = useContext(CoordinatesContext);
-
+const Coordinate = ({ coord: { lng, lat, id }, coordinatesDispatch }) => {
   return (
     <div className="coordinate">
       <p>
@@ -13,7 +11,7 @@ const Coordinate = ({ coord: { lng, lat, id } }) => {
       </p>
       <button
         onClick={() => {
-          coordinatesDispatch(deleteCoord(id));
+          coordinatesDispatch(id);
         }}
       >
         X
@@ -22,4 +20,8 @@ const Coordinate = ({ coord: { lng, lat, id } }) => {
   );
 };
 
-export default Coordinate;
+const mapDispatchToProps = (dispatch) => ({
+  coordinatesDispatch: (id) => dispatch(deleteCoord(id)),
+});
+
+export default connect(null, mapDispatchToProps)(Coordinate);
